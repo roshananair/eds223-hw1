@@ -1,10 +1,11 @@
 ---
-title: "EDS 223 Homework 1: Mapmaking Practice"
+title: "Environmental Justice Mapping Practice"
+subtitle: "EDS 223 Homework 1"
 author: "Roshan Andres Nair"
 format: 
   pdf:
-    fig-width: 8
-    fig-height: 5
+    fig-width: 9
+    fig-height: 6
     fig-pos: "H"
 execute:
   warning: false
@@ -44,12 +45,12 @@ king_co <- ejscreen %>%
   filter(!is.na(B_PNPL)) # Removing ocean blocks
 ```
 
-# Figure 1
+# Figure 1: People of Color Proportion (Percentile)
 ```{r}
 # Mapping census block state percentiles for proprotion of people of color
 tm_shape(king_co) +
   tm_polygons(
-    fill = 'B_PEOPCOLORPCT',
+    fill = 'P_PEOPCOLORPCT',
     fill.scale = tm_scale_continuous(values = '-brewer.rd_yl_gn'),
     fill.legend = tm_legend(
       title = 'POC Proportion Percentile',
@@ -64,17 +65,17 @@ tm_shape(king_co) +
   )
 ```
 
-# Figure 2
+# Figure 2: NPL Superfund Proximity Score (Percentile)
 ```{r}
 # Mapping census block state percentiles for superfunnd proximity score
 tm_shape(king_co) +
   tm_polygons(
-    fill = 'B_PNPL',
+    fill = 'P_PNPL',
     fill.scale = tm_scale_continuous(values = '-brewer.rd_yl_gn'),
     fill.legend = tm_legend(
       title = 'Superfund Proximity Score',
       orientation = 'landscape',
-      width = 70
+      width = 30
     )
   ) +
   tm_scalebar(position = c('left', 'bottom')) +
