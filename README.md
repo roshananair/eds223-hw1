@@ -17,7 +17,8 @@ This repository contains Assignment 1 for EDS 223 Geospatial Analysis &amp; Remo
 ## Data Availabiility
 
 Dataset from U.S. Environmental Protection Agency (EPA), EJScreen 2023.
-**Note: EJScreen is no longer supported by the U.S. Environmental Protection Agency (EPA), and data is not available for [download](https://www.epa.gov/ejscreen/download-ejscreen-data).**
+
+**Note: EJScreen is no longer supported by the U.S. Environmental Protection Agency (EPA), and data is not available for [download](https://www.epa.gov/ejscreen/download-ejscreen-data) from the official website.**
 
 ## Contributors
 
