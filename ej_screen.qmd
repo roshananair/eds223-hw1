@@ -1,7 +1,11 @@
 ---
 title: "EDS 223 Homework 1: Mapmaking Practice"
 author: "Roshan Andres Nair"
-format: pdf
+format: 
+  pdf:
+    fig-width: 8
+    fig-height: 6
+    fig-pos: "H"
 ---
 
 # People of Color and National Priorities List Superfund Sites in King County, Washington, USA
