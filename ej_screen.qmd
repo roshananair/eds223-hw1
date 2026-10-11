@@ -73,7 +73,7 @@ tm_shape(king_co) +
     fill = 'P_PNPL',
     fill.scale = tm_scale_continuous(values = '-brewer.rd_yl_gn'),
     fill.legend = tm_legend(
-      title = 'Superfund Proximity Score',
+      title = 'Superfund Proximity Score Percentile',
       orientation = 'landscape',
       width = 30
     )
