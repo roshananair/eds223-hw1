@@ -1,0 +1,76 @@
+---
+title: "EDS 223 Homework 1: Mapmaking Practice"
+author: "Roshan Andres Nair"
+format: pdf
+---
+
+# People of Color and National Priorities List Superfund Sites in King County, Washington, USA
+King County is an administrative subdivision in the central-Western portion of Washington, USA. The county is the largest county in the state by population (approx. 2.3 million), and holds the most populous city in the state, Seattle. The county is the most diverse in the state and also contains 7 active National Priorities List (NPL) Superfund sites (Harbor Island, Lockheed West Seattle, Lower Duwamish Waterway, Midway Landfill, Pacific Sound Resources, Queen City Farms, and Quendall Terminals). Here, are two figures looking at people of color and Superfund sites. The first depicts the census block-level percentile of proportion of people of color (ie. how non-white this census block is compared to the rest of the state). The second figure depicts the census block-level percentile of the NPL Superfund Proximity Score (ie. how high is the proximity score compared to the rest of the state, calculated by summing (1/distance to site in km) for each site within 5 km of the census block). Many of these areas of proximity to Superfund sites are also areas with disproportionally high non-white populations, mostly to the South and West of the City of Seattle. A notable exception is to the Eastern suburbs of Seattle, where high non-white populations are driven by tech industry immigration in an area further from King County's Superfund sites.
+
+
+```{r}
+# Package Library
+library(tidyverse)
+library(sf)
+library(here)
+library(stars)
+library(tmap)
+
+# Read in geodatabase of EJScreen data at the Census Block Group level
+ejscreen <- sf::st_read(here::here(
+  "data",
+  "ejscreen",
+  "EJSCREEN_2023_BG_StatePct_with_AS_CNMI_GU_VI.gdb"
+))
+
+# Filter to King Counry, WA
+king_co <- ejscreen %>%
+  dplyr::filter(
+    CNTY_NAME %in%
+      c(
+        "King County"
+      )
+  ) |>
+  filter(STATE_NAME == "Washington") |> # Removing King County, Texas
+  filter(!is.na(B_PNPL)) # Removing ocean blocks
+```
+
+# Figure 1
+```{r}
+# Mapping census block state percentiles for proprotion of people of color
+tm_shape(king_co) +
+  tm_polygons(
+    fill = 'B_PEOPCOLORPCT',
+    fill.scale = tm_scale_continuous(values = '-brewer.rd_yl_gn'),
+    fill.legend = tm_legend(
+      title = 'POC Proportion Percentile',
+      orientation = 'landscape',
+      width = 30
+    )
+  ) +
+  tm_scalebar(position = c('left', 'bottom')) +
+  tm_compass() +
+  tm_title(
+    'Percentile of Proportion of People of Color by Census Block in King County, Wasington'
+  )
+```
+
+# Figure 2
+```{r}
+# Mapping census block state percentiles for superfunnd proximity score
+tm_shape(king_co) +
+  tm_polygons(
+    fill = 'B_PNPL',
+    fill.scale = tm_scale_continuous(values = '-brewer.rd_yl_gn'),
+    fill.legend = tm_legend(
+      title = 'Superfund Proximity Score',
+      orientation = 'landscape',
+      width = 70
+    )
+  ) +
+  tm_scalebar(position = c('left', 'bottom')) +
+  tm_compass() +
+  tm_title(
+    'Percentile of NPL Superfund Proximity Score by Census Block in King County, Wasington'
+  )
+```
