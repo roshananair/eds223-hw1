@@ -1,4 +1,4 @@
-# Repository for Homework 1 from EDS 223 Geospatial Analysis &amp; Remote Sensing
+# Repository for Homework 1 from [EDS 223 Geospatial Analysis &amp; Remote Sensing](https://eds-223-geospatial.github.io/)
 ## Environmental Justice Mapmaking Practice
 
 This repository contains Assignment 1 for EDS 223 Geospatial Analysis &amp; Remote Sensing. This assignment uses the U.S. EPA EJScreen dataset to explore environmental justice metrics in King County, Washington, U.S.A. The maps in this repository show distributions of people of color and proximity to active superfund sites to explore potential geographic patterns.
@@ -14,19 +14,16 @@ This repository contains Assignment 1 for EDS 223 Geospatial Analysis &amp; Remo
     - data/ejscreen/EJSCREEN_2023_BG_Columns.xlsx: Column definitions for the ejscreeen dataset.
     - data/ejscreen/ejscreen-tech-doc-version-2-2.pdf : Technical documentation for EJ Screen from the U.S. EPA.
 
-## Retrieving EJ Screen Data
+## Data Availabiility
 
-This data is available in this repository in the /data/ejscreen folder (gitignored).
-
-Use the following code to read in this data package as a dataframe with geometry (requires installation of package sf):
+Dataset from U.S. Environmental Protection Agency (EPA), EJScreen 2023.
+**Note: EJScreen is no longer supported by the U.S. Environmental Protection Agency (EPA), and data is not available for [download](https://www.epa.gov/ejscreen/download-ejscreen-data).**
 
 ## Contributors
 
 [Roshan Andres Nair](https://github.com/roshananair)
 
 ## References
-
-**Note: EJScreen is no longer supported by the U.S. Environmental Protection Agency (EPA), and data is not available for [download](https://www.epa.gov/ejscreen/download-ejscreen-data).**
 
 U.S. Environmental Protection Agency (EPA), 2023. EJScreen Technical Documentation.
 
