@@ -1,5 +1,7 @@
 # Repository for Homework 1 from EDS 223 Geospatial Analysis &amp; Remote Sensing
-## Mapmaking Practice
+## Environmental Justice Mapmaking Practice
+
+This repository contains Assignment 1 for EDS 223 Geospatial Analysis &amp; Remote Sensing. This assignment uses the U.S. EPA EJScreen dataset to explore environmental justice metrics in King County, Washington, U.S.A. The maps in this repository show distributions of people of color and proximity to active superfund sites to explore potential geographic patterns.
 
 ## Repository Contents
 
@@ -17,12 +19,6 @@
 This data is available in this repository in the /data/ejscreen folder (gitignored).
 
 Use the following code to read in this data package as a dataframe with geometry (requires installation of package sf):
-
-df <- sf::st_read(here::here(
-  "data",
-  "ejscreen",
-  "EJSCREEN_2023_BG_StatePct_with_AS_CNMI_GU_VI.gdb"
-))
 
 ## Contributors
 
