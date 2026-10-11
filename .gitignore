@@ -1,6 +1,6 @@
 # vscode and air
-.vscode
-air.toml
+/.vscode
+/air.toml
 
 # Data
 /data
